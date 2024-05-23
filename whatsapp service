@@ -1,0 +1,100 @@
+List of services :
+
+User service
+
+Message service
+
+Asset service 
+
+UserGroupMessageHandler
+
+
+API design
+
+/sendMessage/
+POST sendMessage(String userId, String recepientId, String encodedMessage, String groupId, String apiKey)
+// above parameters as request params.
+Request body : JSON body of encoded/encrypted message
+201
+
+/getMessage/
+GET getMessage(String userId, String senderId, String groupId, String apiKey)
+request params
+200
+
+/deleteMessage/
+GET deleteMessage(String userId, String messageId, String apiKey)
+request params
+
+/forwardMessage
+GET forwardMessage(String userId, String messageId, String apiKey, String recepientId, String groupId)
+request params
+
+/editMessage
+POST editMessage(String userId, String recepientId, String groupId, String apiKey)
+not PUT Request body : JSON body of encoded/encrypted message
+
+
+DB design
+
+User
+String id
+String name
+String email
+String phoneNo
+DateTime updatedAt
+DateTime createdAt
+
+
+
+Message
+String id
+String content
+String messageType
+String assetId
+String sender
+String recepient
+String chatId
+String groupId
+DateTime seen
+DateTime delivered
+DateTime read
+DateTime updatedAt
+DateTime createdAt
+
+
+Asset
+String id
+String messageId
+String mediaUrl // link to blob storage url link
+DateTime updatedAt
+DateTime createdAt
+
+
+Group
+String id
+String name
+String title
+DateTime updatedAt
+DateTime createdAt
+
+
+UserGroupInfo
+String id
+String groupId
+String userId
+
+
+
+Chat
+String id
+String firstuserId
+String secondUserId
+DateTime updatedAt
+DateTime createdAt
+
+
+
+
+
+
