@@ -8,8 +8,6 @@ Asset service
 
 UserGroupMessageHandler
 
-Notification service
-
 
 API design
 
@@ -44,6 +42,7 @@ String id
 String name
 String email
 String phoneNo
+String apiKey
 DateTime updatedAt
 DateTime createdAt
 
