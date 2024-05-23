@@ -1,0 +1,105 @@
+Uber/Ola
+
+Driver service
+Customer service
+Search service
+Payment service
+Notification service
+Rating service
+Analytics service
+MLFraudEngine service
+Price surging service
+
+
+ELK Logstash
+KAFKA
+
+
+
+DISCO
+
+
+------------------------API--------------------------
+CRUD operations :
+
+/searchCab
+
+/bookCab
+
+/completePayment
+
+/addCab ( for driver apis)
+
+(Register user)
+/signup
+
+/login
+
+/rateTrip
+
+/rateDriver
+
+
+-------------------Database design-----------------
+Driver:
+String id
+String name
+String email
+String phoneNo
+String drivingLicenseNo
+String driverType // intercity or inside city only
+String geoLocation
+String status // driving or waiting or about to finish
+DateTime createdAt
+
+
+Customer:
+String id
+String name
+String email
+String phoneNo
+String geoLocation
+DateTime createdAt
+
+
+
+Vehicle:
+String id
+String driverId
+String vehicleType
+String geoLoc
+String licensePlateNo
+DateTime createdAt
+
+
+Trip:
+String id
+String sourceGeoLoc
+String destinationGeoLoc
+String customerId
+String driverId
+DateTime createdAt
+
+
+
+Payment :
+String id
+String tripId
+double amount
+String status // failed or completed
+String paymentMode
+DateTime updatedAt;
+DateTime createdAt;
+
+Feedback:
+String id
+int rating
+String ratingType // driver rating or trip rating
+String driverId
+String tripId
+DateTime createdAt
+
+
+Location info also persisted and sharded ....int he form of grid
+
+
