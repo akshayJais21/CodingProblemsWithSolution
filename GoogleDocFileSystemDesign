@@ -1,0 +1,88 @@
+google doc like sharing system
+
+
+
+CRUD operations // 
+
+createDocument/ 
+RenameDocument/
+searchDocument/
+viewDocument/
+
+Update/edit document taken care by app internally
+deletefile/
+
+
+
+Client  
+ - Chunker
+ - Indexer
+ - Watcher
+ - Internal DB
+
+
+
+for acid 
+
+MYSQL DB ( sharded on the basis of on the basis of file owner userId too )
+META data storage layer
+
+
+
+
+Table :
+
+User
+String id
+String name
+String email
+String phoneNo
+String createdAt
+
+
+Document
+
+String id
+String workSpaceFolderPath
+String url
+String versionName
+String hashCode // useful for sharding on the basis o 
+
+
+
+
+Chunk
+String id
+String documentId
+String chunkUrl // link to blob storage
+String version
+DateTime updatedAt
+DateTime createdAt
+
+
+
+
+UserDocumentPermissionMapping
+
+String id
+String userid
+String documentId
+String permissionList // comma separated permission values
+DateTime updatedAt
+DateTime createdAt
+
+DocumentDeviceMapping
+String id
+String documentId
+String deviceId
+DateTime updatedAt
+DateTime createdAt
+
+
+
+
+
+
+
+
+
