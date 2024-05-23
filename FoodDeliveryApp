@@ -1,0 +1,168 @@
+Food Delivery system
+
+User service, Search service, Cart service, Promotion service, Pricing service, Notification service, Order managment service, Analytics service
+
+
+
+-----------------API-------------------
+CRUD operations :
+User = Customer + Driver
+
+/login 
+/singup
+
+
+/searchRestaurants
+
+
+
+/searchFoodItem
+
+
+
+/addFoodItem  
+//admin users only
+
+/addItemToCart
+
+
+/placeOrder
+
+
+/getFoodInfoListFromRestaurant
+
+
+/completePayment
+
+/applyVoucher
+
+/rateFoodOrder
+
+/rateDelivery
+
+
+
+
+
+
+-------------DB schema-------------------
+
+Customer:
+String id
+String name
+String email
+String phoneNo
+Sring address
+Sring city
+String geoloc
+DateTime createdAt
+
+
+
+Driver:
+String id
+String name
+double rating
+String geoloc
+String email
+String phoneNo
+DateTime createdAt
+
+
+
+
+Restaurant :
+String id
+String name
+String address
+String geoLocation
+double rating
+String restaurantType // veg or non veg
+double cosTPerTwoPerson
+String ownerUserId // owner id
+DateTime createdAt
+
+
+
+
+
+FoodItem :
+String id
+String name
+double rating
+int rateId
+String restaurantId
+DateTime createdAt
+DateTime updatedAt
+
+
+
+
+
+
+PriceRate :
+String id
+String fooditemId
+int quanity
+double price
+
+
+Order :
+String id
+String userId // purchaser
+String itemToQuantityMapping // JSON string of item id to quanity mapping
+String status // waiting,prepared ,ontTheWay,delivered
+double amount
+DateTime createdAt
+DateTime updatedAt
+
+
+
+
+Payment :
+String id
+String orderId
+String paymentMode
+String paymentStatus //successful , failed, pending
+DateTime updatedAt
+
+
+
+Rating
+String id
+int rating
+String orderId
+String ratingType // orderrating or delivery rating or restaurant rating or foodItem rating
+String foodItemId
+String restaurantId
+DateTime createdAt
+
+
+
+Voucher
+String id
+String voucherCode
+String rule
+String status // ACTIVE or running 
+DateTime createdAt
+
+
+Cart
+String id
+String cartType // anonymous or not
+String userId
+String itemToQuantityMapping
+DateTime updatedAt
+
+
+
+
+
+
+
+
+
+
+
+
+
