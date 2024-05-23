@@ -1,4 +1,4 @@
-Instagram design ( Twitter or social Media FB etc)
+Instagram design
 
 Post service,  Media service, User service , UserFeeds Service(Recommendation service) , Search service , Notification service
 
@@ -13,6 +13,8 @@ Post service,  Media service, User service , UserFeeds Service(Recommendation se
 
 
 /followUser
+
+/UnFollowUser
 
 /signup 
 
