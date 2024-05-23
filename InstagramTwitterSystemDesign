@@ -1,0 +1,100 @@
+Instagram design ( Twitter or social Media FB etc)
+
+Post service,  Media service, User service , UserFeeds Service(Recommendation service) , Search service , Notification service
+
+
+/createPost
+
+/editPost
+
+/likePost
+
+/commentPost
+
+
+/followUser
+
+/signup 
+
+/login
+
+/searchUser/
+
+/getNewsFeed/
+
+
+/sendMessage
+
+/forwardMessage
+
+/getMessage
+all whatsapp related apis
+
+
+DB schema
+
+
+User
+String id
+String name
+String email
+String phoneNo
+String apiKey
+DateTime updatedAt
+DateTime createdAt
+
+UserFollowTable
+String id
+String followerId
+String followeeId
+DateTime updatedAt
+
+
+Post
+String id
+String caption
+String userId // postedBy
+String mediaId
+DateTime updatedAt
+DateTime createdAt
+
+
+Media 
+
+String id
+String mediaUrl
+String mediaType
+String size
+DateTime updatedAt
+DateTime createdAt
+
+
+
+
+
+Comment
+String id
+String postId
+String commentId
+String content
+String userId // commenterId
+
+
+
+
+Likes
+String id
+String postId
+int likesCount
+
+
+
+// for frequent user of insta
+UserFeedsTable
+String id
+String postId
+String receiverId
+DateTime createdAt
+DateTime seenAt
+
+
