@@ -1,0 +1,111 @@
+Parking Lot
+
+
+Spot allocation service
+Ticketing service
+
+Notification service
+Payment service
+RatingService ( Feedback service )
+Search service
+Analytics service
+
+
+CRUD 
+
+/getParkingSpaces
+
+/bookParkingSpace
+
+/payForBooking
+
+
+/updateBooking
+
+
+/cancelBooking
+
+
+/signUp
+
+/login
+
+/addParkingSlot ( for admin uses only )
+
+/updateParkingSlot ( for admin uses only )
+
+
+/rateBooking
+
+
+
+
+User
+String id
+String name
+String email
+String phone
+String address
+String city
+String state
+DateTime createdAt
+DateTime updatedAt
+
+
+ParkingSlot
+String id
+String slotType
+String geoLocation
+String floorNo
+String spotNo
+String status // status for availibilty occupied or not
+DateTime createdAt
+DateTime updatedAt
+
+
+
+SlotType
+TWO- WHEELER,SEDAN, SUV, MID-SUV,HATCHBACK< MID-SEDAN, BUS
+
+
+
+Booking
+String id
+String slotId
+int duration
+String userId // created//initiated by
+String vehicleId
+DateTime createdAt
+DateTime updatedAt
+
+Vehicle 
+String id
+String userId // owner info
+String vehiclePlateNo
+String vehicleType
+DateTime createdAt
+
+
+
+Payment
+String id
+String bookingId
+int amount
+String paymentStatus // successfull or failed
+String paymentMode
+DateTime createdAt
+DateTime updatedAt
+
+
+
+Rating
+String id
+String bookingId
+int rating
+DateTime createdAt
+DateTime updatedAt
+
+
+
+
+
