@@ -1,0 +1,159 @@
+------------------------------Bookmyshow-----------------------------
+
+
+
+
+
+Search service
+Booking service
+Payment service
+Notification service
+Analytics service
+User services
+Admin services
+Promotion services
+
+
+-----------------API--------------
+CRUD :
+
+
+/signup
+
+
+/login
+
+/placeOrder
+
+
+/completePayment
+
+/addToCart
+
+/searchShow 
+searchShow(String showName,String city)
+
+
+
+
+
+admin apis : 
+
+/addShow 
+
+
+/addAuditorium
+
+/updateShow
+
+
+
+---------------DB schema --------------
+
+User:
+String id
+String name
+String email
+String phoneNo
+String city
+String address
+DateTime createdAt
+
+
+Booking:
+String id
+String userId // done by
+DateTime createdAt
+
+
+BookingTicketMappinginfo
+String id
+String bookingId
+String ticketId
+
+
+Ticket:
+String id
+String showId
+int noOfAdultAllowed
+int noOfChildAllowed
+
+
+Event:
+String id
+String eventName
+String eventType // cinema or concert or play
+DateTime launchDate
+String trailerLink 
+DateTime createdAt
+
+
+
+Show:
+String id
+String name
+String eventId
+String auditoriumId
+DateTime startTime
+DateTime endTime
+DateTime createdAt
+DateTime updatedAt
+
+
+
+Auditorium:
+String id
+String name
+String city
+String ownerUserId // optional
+String geoloc
+String address
+
+
+Cart:
+String id
+String cartType // anonymous or not
+String userid
+String showidNoOfTicketsMapping
+DateTime createdAt
+DateTime updatedAt
+
+
+
+
+Payment :
+String id
+String bookingId
+String paymentMode
+String status // failed or successful
+DateTime createdAt
+DateTime updatedAt
+
+
+
+
+Rating :
+
+String id
+int rating
+String showId
+String eventId
+String userId
+
+
+
+Voucher :
+String id
+String rule // for calcualting discount
+String couponCode
+String status
+DateTime createdAt
+DateTime updatedAt
+
+
+
+
+
+
+
+
