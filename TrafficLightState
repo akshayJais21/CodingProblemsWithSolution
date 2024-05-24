@@ -1,0 +1,76 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class TrafficLightHandler {
+    public static void main(String[] args){
+        
+    }
+}
+
+class TrafficLight{
+    Color currentSignal;
+    TrafficLightState currState; // denoting current state
+    Map<Color, TrafficLightState> map;
+    public TrafficLight(TrafficLightState state){
+        this.currentSignal = state.getSignal();
+        this.map = new HashMap<>();
+        map.put(Color.RED, new RedLightState());
+        map.put(Color.GREEN, new GreenLightState());
+        map.put(Color.YELLOW, new YellowLightState());
+    }
+
+    public TrafficLightState getNextState(TrafficLightState state){
+        if( state instanceof RedLightState)
+            return map.get(Color.RED.RED);
+        else if( state instanceof GreenLightState )
+            return map.get(Color.GREEN);
+        else if( state instanceof YellowLightState)
+            return map.get(Color.YELLOW);
+        return map.get(Color.RED);
+    }
+}
+
+enum Color {
+    RED, GREEN, YELLOW;
+}
+
+
+interface TrafficLightState{
+    public void lighten(TrafficLight trafficLight);
+    default public Color getSignal(){
+        return null;
+    }
+}
+
+
+
+  class RedLightState implements TrafficLightState{
+    private final Color signal = Color.RED;
+    public void lighten(TrafficLight trafficLight){
+        trafficLight.currentSignal = signal;
+        trafficLight.currState = trafficLight.map.get(signal);
+        }
+
+}
+
+
+class GreenLightState implements TrafficLightState{
+    private final Color signal = Color.GREEN;
+    public void lighten(TrafficLight trafficLight){
+        trafficLight.currentSignal = signal;
+        trafficLight.currState = trafficLight.map.get(signal);
+    }
+}
+
+
+
+ class YellowLightState implements TrafficLightState{
+     private final Color signal = Color.YELLOW;
+    public void lighten(TrafficLight trafficLight){
+        trafficLight.currentSignal = signal;
+        trafficLight.currState = trafficLight.map.get(signal);
+    }
+
+}
+
+
