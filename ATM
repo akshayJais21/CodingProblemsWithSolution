@@ -1,0 +1,89 @@
+ATM design
+
+---------------------API ------------------------------
+CRUD :
+
+/authenticate
+
+/resetPin
+
+
+
+/depositCash
+
+/depositCheque
+
+/transferMoney  // from one account to another
+
+
+/viewBalance
+
+/withDrawAmount
+
+
+
+
+--------------DB schema -------------------------
+
+
+User
+String id
+String name
+String phoneNo
+String email
+DateTime createdAt
+DateTime updatedAt
+
+
+
+ATM
+String id
+String bankId
+String atmBranchName
+String address
+String availableCashDenominationInfo
+DateTime createdAt
+DateTime updatedAt
+
+
+Bank
+String id
+String name
+String bankType
+DateTime createdAt
+DateTime updatedAt
+
+
+Account
+String id
+String userId
+String accountType // savings or current
+String bankId
+DateTime createdAt
+DateTime updatedAt
+
+
+
+Card 
+String id
+String userId
+String bankId
+String cardNo
+String cvvNo
+String expiryDate
+DateTime issuedAt
+
+
+
+
+Transaction
+String id
+String transcationType // withdrawal or deposit or transfer
+String userId
+int amount
+String fromAccountId
+String toAccountId
+DateTime initiatedAt
+
+
+
