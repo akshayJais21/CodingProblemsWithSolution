@@ -4,6 +4,8 @@ import java.util.Map;
 public class TrafficLightHandler {
     public static void main(String[] args){
         
+        // do a while loop and keep thread running for that musch amount of duration
+
     }
 }
 
@@ -37,28 +39,50 @@ enum Color {
 
 interface TrafficLightState{
     public void lighten(TrafficLight trafficLight);
-    default public Color getSignal(){
-        return null;
-    }
+    public Color getSignal();
+    public void getDuration();
 }
 
 
 
   class RedLightState implements TrafficLightState{
     private final Color signal = Color.RED;
+    @Override
     public void lighten(TrafficLight trafficLight){
         trafficLight.currentSignal = signal;
         trafficLight.currState = trafficLight.map.get(signal);
         }
 
-}
+      @Override
+      public Color getSignal() {
+          return null;
+      }
+
+      @Override
+      public long getDuration() {
+
+      }
+
+  }
 
 
 class GreenLightState implements TrafficLightState{
     private final Color signal = Color.GREEN;
+    @Override
     public void lighten(TrafficLight trafficLight){
         trafficLight.currentSignal = signal;
         trafficLight.currState = trafficLight.map.get(signal);
+    }
+
+    @Override
+    public Color getSignal() {
+        return null;
+    }
+
+    @Override
+    public long getDuration() {
+        return 2000;
+
     }
 }
 
@@ -66,11 +90,22 @@ class GreenLightState implements TrafficLightState{
 
  class YellowLightState implements TrafficLightState{
      private final Color signal = Color.YELLOW;
+     @Override
     public void lighten(TrafficLight trafficLight){
         trafficLight.currentSignal = signal;
         trafficLight.currState = trafficLight.map.get(signal);
     }
 
-}
+     @Override
+     public Color getSignal() {
+         return null;
+     }
+
+     @Override
+     public void getDuration() {
+
+     }
+
+ }
 
 
